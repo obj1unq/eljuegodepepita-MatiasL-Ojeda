@@ -1,0 +1,21 @@
+{
+  "name": "eljuegodepepita-matiasl-ojeda",
+  "version": "1.0.0",
+  "description": "Este es un ejercicio iterativo para introducir Wollok Game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obj1unq/eljuegodepepita-MatiasL-Ojeda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/obj1unq/eljuegodepepita-MatiasL-Ojeda/issues"
+  },
+  "homepage": "https://github.com/obj1unq/eljuegodepepita-MatiasL-Ojeda#readme"
+}

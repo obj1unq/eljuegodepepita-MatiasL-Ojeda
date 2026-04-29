@@ -6,8 +6,9 @@ object pepita {
 	var energia  = 200
 	var position = game.at(3, 3)
 
+	method tengoEnergia() = energia >= 9 && energia < 1000
 	method image() = 
-	if (self.position() == silvestre.position() || energia <= 0) {
+	if (self.position() == silvestre.position() || energia < 9) {
 		return "pepita-gris.png"
 	} else {
 		return "pepita.png"
@@ -34,12 +35,14 @@ object pepita {
 		energia = energia - 10 - kms 
 	}
 	method energia(cantidad) {
-		energia -= cantidad
+		energia = cantidad
+	}
+	method consumirEnergia() {
+		energia -= 9
 	}
 	method gravedad() {
-        if (self.y() > 0  && energia > 9 && direccion.noHayMuroEn(self.x(), self.y()-1)) {
+        if (self.y() > 0 && self.tengoEnergia() && direccion.noHayMuroEn(self.x(), self.y()-1)) {
 			position = position.down(1)
-			energia -= 9
 		}
 	}
 }

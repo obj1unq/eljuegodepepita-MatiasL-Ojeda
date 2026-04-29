@@ -10,13 +10,13 @@ object direccion {
 	method moverEnYSi(condicion, y, personaje) {
 		if (condicion){
 			personaje.position(personaje.x(), y)
-            personaje.energia(9)
+            personaje.consumirEnergia()
 		}
 	}
     method moverEnXSi(condicion, x, personaje) {
 		if (condicion){
 			personaje.position(x, personaje.y())
-            personaje.energia(9)
+            personaje.consumirEnergia()
 		}
 	}
     method noHayMuroEn(x, y) = not (game.at(x,y) == muro1.position()) &&
@@ -26,28 +26,28 @@ object direccion {
 }
 object arr {
     method mover(personaje) {
-        if (nivel1.dentroDeBordes(personaje, personaje.y() + 1) && personaje.energia() > 9) {
+        if (nivel1.dentroDeBordes(personaje, personaje.y() + 1) && personaje.tengoEnergia()) {
             direccion.moverEnYSi(direccion.noHayMuroEn(personaje.x(), personaje.y() + 1), personaje.y() + 1, personaje)
         }
     }
 }
 object der {
     method mover(personaje) {
-        if (nivel1.dentroDeBordes(personaje, personaje.x() + 1) && personaje.energia() > 9){
+        if (nivel1.dentroDeBordes(personaje, personaje.x() + 1) && personaje.tengoEnergia()){
             direccion.moverEnXSi(direccion.noHayMuroEn(personaje.x() + 1, personaje.y()), personaje.x() + 1, personaje)
         }
     }
 }
 object aba {
     method mover(personaje) {
-        if (nivel1.dentroDeBordes(personaje, personaje.y() - 1) && personaje.energia() > 9){
+        if (nivel1.dentroDeBordes(personaje, personaje.y() - 1) && personaje.tengoEnergia()){
             direccion.moverEnYSi(direccion.noHayMuroEn(personaje.x(), personaje.y() - 1), personaje.y() - 1, personaje)
         }
     }
 }
 object izq {
     method mover(personaje) {
-        if (nivel1.dentroDeBordes(personaje, personaje.x() - 1) && personaje.energia() > 9){
+        if (nivel1.dentroDeBordes(personaje, personaje.x() - 1) && personaje.tengoEnergia()){
             direccion.moverEnXSi(direccion.noHayMuroEn(personaje.x() - 1, personaje.y()), personaje.x() - 1, personaje)
         }
     }
